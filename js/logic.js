@@ -1,3 +1,5 @@
+const contenedorTempo = document.getElementById('Contenedortempo')
+
 // Carga un sonido a través de su fuente y lo inyecta de manera oculta
 const cargarSonido = function (fuente) {
     const sonido = document.createElement("audio");
@@ -12,7 +14,6 @@ const cargarSonido = function (fuente) {
 // Empieza el conteo de las datos almacenados en el array
 function startTempo(){
     time[2]--;
-    tempo.textContent=("0"+time[0]).slice(-2)+":"+("0"+time[1]).slice(-2)+":"+("0"+time[2]).slice(-2);
     if(time[2]<0){
         time[1]--;
         time[2]=59;
@@ -21,12 +22,15 @@ function startTempo(){
         time[0]--;
         time[1]=59;
     }
+    tempo.textContent=("0"+time[0]).slice(-2)+":"+("0"+time[1]).slice(-2)+":"+("0"+time[2]).slice(-2);
 
     if(time[2]==0 && time[1]==0 && time[0]==0){
         clearInterval(intervalTempo);
         sound.loop=true;
         sound.play();
-        console.log("Temporizador finalizado");
+        pausar.style.display="none";
+        contenedorTempo.classList.add('finished');
+        detener.focus();
     }
 }
 
@@ -68,10 +72,10 @@ function conversor(){
     }
     if(time[2]<3 && time[1]==0 && time[0]==0){
         console.warn("El temporizador debe tener un conteo mínimo de 3 segundos para iniciar");
+        showAlert("El temporizador debe tener un conteo mínimo de 3 segundos para iniciar");
         segundo.focus();
         return false;
     }else{
-        console.log("Conversión finalizada");
         return true;
     }
 }
@@ -91,6 +95,7 @@ function reset (opcion){
         hora.value="";
         pausar.textContent="Pausar";
         firsTime=true;
+        pausar.style.display="";
     }else if(opcion===-1){
         intervalTempo=setInterval(startTempo,1000);
     }

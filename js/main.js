@@ -12,6 +12,7 @@ let intervalTempo,firsTime=true;
 
 function initTempo(){
     if(conversor()){
+        hiddeStart();
         intervalTempo=setInterval(startTempo,1000);
     }else{
         console.error("No se pudo inicializar el temporizador");
@@ -19,7 +20,11 @@ function initTempo(){
 }
 
 function stopTempo(){
-    reset(0);
+    contenedorTempo.classList.remove('finished');
+    showStart();
+    sleep(500).then(()=>{
+        reset(0);
+    })
 }
 
 function pauseTempo(){
@@ -34,7 +39,7 @@ function pauseTempo(){
     }
 }
 
-console.log("%cVersión 0.0.0a1\n%cCódigo fuente: https://github.com/GJZ26/Temporizador.js","color: rgb(11, 0, 160);","font-style: italic;")
+console.log("%cVersión 1.0.0\n%cCódigo fuente: https://github.com/GJZ26/Temporizador.js","color: rgb(11, 0, 160);","font-style: italic;")
 
 segundo.addEventListener('keyup',setTime);
 minuto.addEventListener('keyup',setTime);

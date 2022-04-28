@@ -5,12 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Temporizador</title>
+    <link rel="shortcut icon" href="./media/temporizador.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@200&family=Radio+Canada:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/light.css">
 </head>
 <body>
+    <div id="alert"></div>
     <div class="start" id="start">
         <fieldset>
-            <legend>Establece el tiempo del Temporizador</legend>
+            <legend>Establece el tiempo</legend>
             <label for="segundo">Segundos</label>
             <input autofocus type="number" name="segundo" id="segundo" onfocus="this.select();" placeholder="00">
             <label for="minuto">Minutos</label>
@@ -22,10 +27,13 @@
     </div>
     <div class="Contenedortempo" id="Contenedortempo">
         <time class="tempo" id="tempo">00:00:00</time>
-        <button class="pausar" id="pausar">Pausar</button>
-        <button class="detener" id="detener">Detener</button>
+        <div class="controles" id="controles">
+            <button class="pausar" id="pausar">Pausar</button>
+            <button class="detener" id="detener">Detener</button>
+        </div>
     </div>
 </body>
 <script src="./js/logic.js"></script>
+<script src="./js/window.js"></script>
 <script src="./js/main.js" defer></script>
 </html>
