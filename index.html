@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temporizador</title>
+    <link rel="stylesheet" href="./css/light.css">
+</head>
+<body>
+    <div class="start" id="start">
+        <fieldset>
+            <legend>Establece el tiempo del Temporizador</legend>
+            <label for="segundo">Segundos</label>
+            <input autofocus type="number" name="segundo" id="segundo" onfocus="this.select();" placeholder="00">
+            <label for="minuto">Minutos</label>
+            <input type="number" name="hora" id="minuto" onfocus="this.select();" placeholder="00">
+            <label for="hora">Horas</label>
+            <input type="number" name="hora" id="hora" onfocus="this.select();" placeholder="00">
+            <button id="comenzar">Comenzar</button>
+        </fieldset>
+    </div>
+    <div class="Contenedortempo" id="Contenedortempo">
+        <time class="tempo" id="tempo">00:00:00</time>
+        <button class="pausar" id="pausar">Pausar</button>
+        <button class="detener" id="detener">Detener</button>
+    </div>
+</body>
+<script src="./js/logic.js"></script>
+<script src="./js/main.js" defer></script>
+</html>

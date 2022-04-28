@@ -1,0 +1,26 @@
+legend{
+    text-align: center;
+}
+fieldset{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    width: 40%;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none;
+}
+
+input{
+    margin: 0.5rem 0;
+    text-align: center;
+}
+.Contenedortempo{
+    display: flex;
+    flex-direction: column;
+}
+button{
+    width: 90px;
+}
